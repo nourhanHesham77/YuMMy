@@ -1,0 +1,288 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+.sidebar{
+    position: fixed;
+    height: 100vh;
+    transition: all 0.9s ease-in-out;
+    left: 0;
+    background-color: #fff;
+    color: #000;
+    padding: 1rem 1rem;
+    flex-direction: column;
+    width: 75px;
+    z-index: 1000;
+}
+.sidebar-show{
+    left: 300px;
+    transition: all 0.9s ease-in-out;    
+}
+.sidebar .icon-logo{
+    height: 35vh;
+}
+.sidebar .icon-logo img{
+    width: 100%;
+}
+/* .side-sidebar{
+    height: 100%;
+    background-color: #fff;
+    color: #000;
+    padding: 1rem 1rem;
+    flex-direction: column;
+    width: 75px;
+} */
+.sidebar-icon{
+    height: 40vh;
+    padding-top: 1rem;
+    font-size: 2.4rem;
+    text-align: center;
+}
+.sidebar-toggle{
+    cursor: pointer;
+}
+.sidebar-footer{
+    display: flex;
+    justify-items: end;
+    justify-content: space-between;
+    height: 20vh;
+}
+.footer-container{
+    position: absolute;
+    bottom: 1%;
+}
+.sidebar-footer i{
+    display: block;
+    margin: 5px;
+}
+.menu{
+    position: fixed;
+    width: 300px;
+    left: -300px;
+    transition: all 0.9s ease-in-out;
+    height: 100vh;
+    z-index: 10000;
+    background-color: #101010!important;
+}
+.menu-show{
+    left: 0;
+    transition: all 0.9s ease-in-out;
+}
+
+.menu .txt-item a{
+    text-decoration: none;
+    color: #fff;
+    text-align: left;
+}
+.menu-header{
+    padding: 0 4rem;
+    width: 100%;
+}
+.menu-header ul{
+    line-height: 2.5rem;
+    text-align: start;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+li{
+    list-style:none;
+    text-align: left;
+}
+
+
+main {
+    margin-left: 70px;
+}
+
+main .areas, .cats, .ingres,.mealsArea,.mainMeals{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    padding-top: 20px;
+    text-align: center;
+    padding-left: 50px;
+    width: 100%;
+    height: 100%;
+}
+
+main .areas .area{
+    color: #fff;
+    width: 24%;
+} 
+main .areas .area p{
+    font-size: 30px;
+}
+main .areas .area , .cats .cat, .ingres .ingre ,.mealsArea .mealofarea,.mainMeals .mainmeal{
+    cursor: pointer;
+}
+
+main  .cats .cat,.mealsArea .mealofarea,.mainMeals .mainmeal{
+    flex-basis: 23%;
+    border-radius: 5%;
+    /* height: 20%;
+    color: #000;
+    padding: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 20px;
+    position: relative;
+    margin: 7px;
+}
+/* .mealsArea .mealofarea{
+    position: relative;
+    flex-basis: 23%;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin: 5px;
+} */
+main  .cats .cat img,.mealsArea .mealofarea  img,.mainMeals .mainmeal img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.mealsArea .mealofarea  p,.mainMeals .mainmeal p{
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 32px;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: all 0.4s linear;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mealsArea .mealofarea:hover p , .mainMeals .mainmeal:hover p{
+    top: 0;
+    transition: all 0.4s linear;
+}
+main .ingres .ingre{
+    /* flex: 0 0 calc(25% - 20px); */
+    width: 23%;
+    min-height: 300px; 
+    margin: 10px; 
+    padding: 20px; 
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 3px 0px, rgba(255, 255, 255, 0.7) 0px 0px 0px 1px;
+    border-radius: 5%;
+}
+
+
+
+.cat-view{
+    /* display: none; */
+    background: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: all 0.4s linear;
+    overflow: hidden;
+}
+main  .cats .cat:hover .cat-view{
+top: 0%;
+transition: all 0.4s linear;
+}
+/* .cat-view p{
+    width: 85%;
+    text-align: center;
+    margin: auto;
+    font-size: 10px;
+} */
+
+.ingres{
+    color: #fff;
+}
+.ingres .ingre i{
+    font-size: 55px;
+}
+
+.singleMeal{
+    display: flex;
+    color:#fff;
+    padding: 0 25px;
+    width: 100%;
+}
+.singleMeal .img-Container{
+    width: 25%;
+    margin-right: 15px;
+    text-wrap: wrap;
+}
+.singleMeal .img-Container img{
+    width: 100%;
+    border-radius: 20px;
+}
+.singleMeal .mealInfo{
+    width: 75%;
+    margin: 10px;
+}
+
+.singleMeal .mealInfo span{
+    display: inline-flex;
+}
+.Recipes{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+.singleMeal .mealInfo h2{
+    margin-bottom: 15px;
+}
+.Recipes span{
+    /* color: #fff; */
+    /* background-color: #63a13d; */
+    color: #000;
+    background-color: #edb654;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+@media (max-width: 480px) {
+    main .ingres .ingre{
+        /* flex: 0 0 calc(25% - 20px); */
+        width: 85%;
+        min-height: 300px; 
+        margin: 10px; 
+        padding: 20px; 
+        box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 3px 0px, rgba(255, 255, 255, 0.7) 0px 0px 0px 1px;
+        border-radius: 5%;
+    }
+    main .areas .area{
+        color: #fff;
+        width: 100%;
+        min-height: 200px;
+    } 
+    main  .cats .cat,.mealsArea .mealofarea{
+        flex-basis: auto;
+    }
+    .cats{
+        padding-right: 40px;
+    }
+    .singleMeal{
+        display: block;
+    }
+    .singleMeal .img-Container{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
