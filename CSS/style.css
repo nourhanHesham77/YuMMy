@@ -102,7 +102,7 @@ main {
     margin-left: 70px;
 }
 
-main .areas, .cats, .ingres,.mealsArea,.mainMeals{
+main .areas, .cats, .ingres,.mealsArea,.mainMeals,.result-container{
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
@@ -112,7 +112,27 @@ main .areas, .cats, .ingres,.mealsArea,.mainMeals{
     width: 100%;
     height: 100%;
 }
-
+/* main .ser-container{
+    display: flex;
+    
+} */
+main .ser-container .search-container{
+    display: none;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+main .ser-container .search-container input{
+    padding: 12px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px #eee solid;
+    color: #fff;
+    width: 40%;
+    background-color: #000;
+}
 main .areas .area{
     color: #fff;
     width: 24%;
@@ -120,11 +140,11 @@ main .areas .area{
 main .areas .area p{
     font-size: 30px;
 }
-main .areas .area , .cats .cat, .ingres .ingre ,.mealsArea .mealofarea,.mainMeals .mainmeal{
+main .areas .area , .cats .cat, .ingres .ingre ,.mealsArea .mealofarea,.mainMeals .mainmeal,.result-container .mealofarea{
     cursor: pointer;
 }
 
-main  .cats .cat,.mealsArea .mealofarea,.mainMeals .mainmeal{
+main  .cats .cat,.mealsArea .mealofarea,.mainMeals .mainmeal,.result-container .mealofarea{
     flex-basis: 23%;
     border-radius: 5%;
     /* height: 20%;
@@ -151,12 +171,12 @@ main  .cats .cat,.mealsArea .mealofarea,.mainMeals .mainmeal{
     border-radius: 20px;
     margin: 5px;
 } */
-main  .cats .cat img,.mealsArea .mealofarea  img,.mainMeals .mainmeal img{
+main  .cats .cat img,.mealsArea .mealofarea  img,.mainMeals .mainmeal img,.result-container .mealofarea img{
     width: 100%;
     border-radius: 20px;
 }
 
-.mealsArea .mealofarea  p,.mainMeals .mainmeal p{
+.mealsArea .mealofarea  p,.mainMeals .mainmeal p,.result-container .mealofarea p{
     background: rgba(255, 255, 255, 0.8);
     font-size: 32px;
     position: absolute;
@@ -171,7 +191,7 @@ main  .cats .cat img,.mealsArea .mealofarea  img,.mainMeals .mainmeal img{
     justify-content: center;
 }
 
-.mealsArea .mealofarea:hover p , .mainMeals .mainmeal:hover p{
+.mealsArea .mealofarea:hover p , .mainMeals .mainmeal:hover p , .result-container .mealofarea:hover p{
     top: 0;
     transition: all 0.4s linear;
 }
@@ -181,8 +201,8 @@ main .ingres .ingre{
     min-height: 300px; 
     margin: 10px; 
     padding: 20px; 
-    box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 3px 0px, rgba(255, 255, 255, 0.7) 0px 0px 0px 1px;
-    border-radius: 5%;
+    /* box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 3px 0px, rgba(255, 255, 255, 0.7) 0px 0px 0px 1px; */
+    /* border-radius: 5%; */
 }
 
 
@@ -264,15 +284,13 @@ transition: all 0.4s linear;
         min-height: 300px; 
         margin: 10px; 
         padding: 20px; 
-        box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 3px 0px, rgba(255, 255, 255, 0.7) 0px 0px 0px 1px;
-        border-radius: 5%;
     }
     main .areas .area{
         color: #fff;
         width: 100%;
         min-height: 200px;
     } 
-    main  .cats .cat,.mealsArea .mealofarea{
+    main  .cats .cat,.mealsArea .mealofarea ,.result-container .mealofarea{
         flex-basis: auto;
     }
     .cats{
@@ -285,4 +303,15 @@ transition: all 0.4s linear;
         width: 100%;
         margin-bottom: 35px;
     }
-  }
+    main .ser-container .search-container input{
+        padding: 12px;
+        margin: 10px;
+        width: 100%;
+    }
+    /* .mainmeal{
+        width: 100%;
+    } */
+     .result-container,.mealsArea,.ingres,.areas{
+        padding: 0 15px;
+     }
+}
