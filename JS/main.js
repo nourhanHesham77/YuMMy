@@ -24,6 +24,58 @@ function clear() {
   $(".mainMeals").html(null);
   $(".theMealdetail").html(null);
   $(".catMeals").html(null);
+  $(".search-container").css("display","none");
+  $(".result-container").html(null);
+}
+
+//search
+$("#search").click(()=>{
+clear();
+toggleSideBar();
+$(".search-container").css("display","flex")
+// $(".result-container").append(`<Input type="search" id="serByName" placeholder="Search by name">
+//           <Input type="search" id="serByFilter" placeholder="Search by first letter">`)
+})
+$("#serByName").keyup(function(){
+$(".result-container").html(null);
+let valINP = $(this).val();
+console.log(valINP);
+if (valINP !== '') {
+  let API = `https://www.themealdb.com/api/json/v1/1/search.php?s=${valINP}`;
+  console.log(API);
+  showSearch(API);
+}
+});
+$("#serByFilter").keyup(function(){
+$(".result-container").html(null);
+let valINP = $(this).val();
+console.log(valINP);
+if (valINP !== '') {
+  let API = `https://www.themealdb.com/api/json/v1/1/search.php?f=${valINP}`;
+  console.log(API);
+  showSearch(API);
+}
+});
+
+function showSearch(API){
+console.log(API);
+
+$.get(API, function(data){
+  console.log(data);
+  let allMeals = data.meals;
+  if (allMeals) {
+    allMeals.forEach((meal) => {
+      $(".result-container").append(`
+        <div class="mealofarea" idIS="${meal.idMeal}">
+          <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+          <p>${meal.strMeal}</p>
+        </div>
+      `);
+    });
+  } else {
+    $(".result-container").append('<p>No meals found.</p>');
+  }
+});
 }
 
 
@@ -157,6 +209,12 @@ $(".areas").on("click", ".area", function () {
   })
 }
 $(".mealsArea").on("click", ".mealofarea", function () {
+  clear();
+  let id = $(this).attr("idIS");
+  console.log("Clicked on id:", id);
+  singleMeal(id);
+})
+$(".result-container").on("click", ".mealofarea", function () {
   clear();
   let id = $(this).attr("idIS");
   console.log("Clicked on id:", id);
