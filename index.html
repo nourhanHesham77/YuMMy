@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css"> -->
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="CSS/bootstrap.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="CSS/fontawesome.css">
+    <script src="JS/jquery-3.7.0.js"></script>
+
+    <link rel="icon" href="images/logo2.png">
+    <link rel="stylesheet" href="CSS/animate.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>YuMMy</title>
+</head>
+<body>
+    <section class="sidebar">
+        <!-- <div class="side-sidebar"> -->
+        <div class="icon-logo  ">
+            <img src="images/logo2.png" alt="logo" class="logo">
+        </div>
+        <div class="sidebar-icon">
+            <span class="sidebar-toggle">
+                <i class="fa-solid fa-bars bt"></i>
+            </span>
+        </div>
+        <div class="sidebar-footer">
+            <div class="footer-container">
+                <i class="fa-solid fa-globe"></i>
+                <i class="fa-solid fa-share-nodes"></i>
+            </div>
+        </div>
+    <!-- </div> -->
+    </section>
+
+    <section class="menu">
+        <div class="menu-header">
+            <ul class="list-unstyled  text-white text-center">
+                <li class="txt-item"><a href="#" id="search">Search</a></li>
+                <li class="txt-item"><a href="#" id="cats">Categories</a></li>
+                <li class="txt-item"><a href="#" id="areas">Area</a></li>
+                <li class="txt-item"><a href="#" id="ingre">Ingredients</a></li>
+                <li class="txt-item"><a href="#" id="contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <main>
+        <div class="areas"></div>
+        <div class="cats"></div>
+        <div class="ingres"></div>
+        <div class="mealsArea"></div>
+        <div class="mainMeals"></div>
+        <div class="theMealdetail"></div>
+        <div class="catMeals"></div>
+        <div class="ser-container">
+            <div class="search-container">
+                <Input type="search" id="serByName" placeholder="Search by name">
+                    <Input type="search" id="serByFilter" placeholder="Search by first letter">
+            </div>
+            <div class="result-container"></div>
+        </div>
+
+        <div class="contactArea">
+            
+            <form action="https://script.google.com/macros/s/AKfycbxVIesJN2tdzpwwOEghIjQxOFOcTxlgo_Wwoz8A-BvTWKVCLlOedfzfVcs9Ko77l0t4/exec" id="contactForm">
+                <div class="alert-contain p-2">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      <strong>Form submitted successfully!</strong>
+                      <button type="button" class="close " data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  </div>
+                <div class="form-group">
+                    <label for="exampleInputName">Name</label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="e.g. John Wick">
+                    <p class="error">This field is required</p>
+                    <p class="invalid-feedback">Please enter a valid Name.</p>
+                </div>
+        
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" name="email" id="email" class="form-control" aria-describedby="emailHelp" placeholder="e.g. johnwick@gmail.com">
+                    <p class="error">This field is required</p>
+                    <p class="invalid-feedback">Please enter a valid Email.</p>
+                </div>
+        
+                <div class="form-group">
+                    <label for="exampleInputPhone">Phone Number</label>
+                    <input type="tel" id="phone1" name="phone" pattern="^01[0-9]{9}$" class="form-control" placeholder="e.g. 01234567899">
+                    <p class="error">This field is required</p>
+                    <p class="invalid-feedback">Please enter a valid Phone Number.</p>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputAge">Age</label>
+                    <input type="number" id="age" name="age"  class="form-control" placeholder="e.g. 21">
+                    <p class="error">This field is required</p>
+                    <p class="invalid-feedback">Please enter a valid Age.</p>
+                </div>
+                <div class="form-group">
+                    <label for="msg">Message</label>
+                    <textarea id="msg" name="message"  class="form-control" placeholder="Enter your message"></textarea>
+                    <p class="error">This field is required</p>
+                </div>
+
+                <div class="btns">
+                    <button type="submit" id="myBtn" class="btn btn-warning">Contact</button>
+                </div>
+                <!-- <div class="alert alert-success" role="alert">
+                    Form submitted successfully!
+                  </div> -->
+                 
+            </form>
+            
+        </div>
+    </main>
+
+
+    
+    <script src="JS/wow.js"></script>
+            <script src="JS/wow.min.js"></script>
+                    <script>
+                        wow = new WOW(
+                            {
+                            boxClass:     'wow',  
+                            animateClass: 'animated',
+                            offset:       0,
+                            mobile:       true,
+                            live:         true
+                            }
+                            )
+                            wow.init();
+                    </script>
+    
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+     <script src="JS/bootstrap.min.js"></script>
+    <script src="JS/main.js"></script>
+</body>
+</html>
