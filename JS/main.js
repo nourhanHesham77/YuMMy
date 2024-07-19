@@ -267,7 +267,7 @@ async function singleMeal(id){
       <div class="Recipes">
       </div>
       <h2>Tags : </h2>
-      <div class="btns">
+      <div class="btnz">
       <a href="${meal.strSource}" target="_blank" class="btn btn-info">
       Source</a>
       <a href="${meal.strYoutube}" target="_blank" class="btn btn-danger">
