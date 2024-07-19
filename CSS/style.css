@@ -311,9 +311,9 @@ transition: all 0.4s linear;
     justify-content: center;
     padding-top: 20px;
   }
-  /* .alert-contain{
+  .alert-contain{
     display: none;
-  } */
+  }
 
 @media (max-width: 480px) {
     main .ingres .ingre{
