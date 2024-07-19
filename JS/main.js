@@ -26,6 +26,7 @@ function clear() {
   $(".catMeals").html(null);
   $(".search-container").css("display","none");
   $(".result-container").html(null);
+  $(".contactArea").css("display","none");
 }
 
 //search
@@ -351,6 +352,66 @@ async function allAPIS(api,keyAPI,keyImg,key2,contentToLoad){
   let mydata = await result.json();
   let dataRun = mydata.keyAPI;
   dataRun.forEach((content)=>{})
+}
+
+//contact US
+
+//contact google
+$("#contactForm").on("submit", function(e){
+e.preventDefault();
+$("#myBtn").prop('disabled', true);
+//[0]=>access the native DOM element from the jQuery object.
+let form = $('#contactForm')[0];
+let formdata = new FormData(form);
+let actionUrl = $('#contactForm').attr('action');
+
+$.ajax({
+    url: actionUrl,
+    type: 'POST',
+    data: formdata,
+    processData: false,
+    contentType: false,
+    success: function(response) {
+        console.log('Form submitted successfully');
+        $(".alert-contain").css("display","block");
+        form.reset();
+        $("#myBtn").prop('disabled', false);
+    },
+    error: function() {
+        console.error('Error submitting the form');
+    }
+});
+});
+
+
+$("#contact").click(()=>{
+clear();
+toggleSideBar();
+$(".contactArea").css("display","flex");
+})
+function validatePhase(phaseId) {
+var phase = document.getElementById(phaseId);
+var inputs = phase.querySelectorAll('input[required]');
+var isValid = true;
+
+inputs.forEach(function(input) {
+    if (!input.value.trim()) {
+        isValid = false;
+        input.classList.add('is-invalid');
+        var errorElement = input.nextElementSibling;
+        if (errorElement && errorElement.classList.contains('error')) {
+            errorElement.style.display = 'block';
+        }
+    } else {
+        input.classList.remove('is-invalid');
+        var errorElement = input.nextElementSibling;
+        if (errorElement && errorElement.classList.contains('error')) {
+            errorElement.style.display = 'none';
+        }
+    }
+});
+
+return isValid;
 }
 
 
