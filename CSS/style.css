@@ -277,6 +277,44 @@ transition: all 0.4s linear;
     margin: 2px;
 }
 
+.contactArea{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+    width: 100%;
+}
+.contactArea form{
+    color: #fff;
+    width: 50%;
+}
+.contactArea form input{
+    width: 100%;
+}
+.error {
+    display: none;
+    color: var(--red);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: end;
+  }
+  form{
+    /* padding: 10px; */
+    border-radius: 10px;
+    /* box-shadow:  rgba(255, 255, 255, 0.1) 0px 7px 24px; */ 
+  }
+  .form-group{
+    padding: 5px;
+  }
+  .btns{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  /* .alert-contain{
+    display: none;
+  } */
+
 @media (max-width: 480px) {
     main .ingres .ingre{
         /* flex: 0 0 calc(25% - 20px); */
@@ -290,7 +328,7 @@ transition: all 0.4s linear;
         width: 100%;
         min-height: 200px;
     } 
-    main  .cats .cat,.mealsArea .mealofarea ,.result-container .mealofarea{
+    main  .cats .cat,.mealsArea .mealofarea ,.result-container .mealofarea,.mainMeals .mainmeal{
         flex-basis: auto;
     }
     .cats{
@@ -311,7 +349,26 @@ transition: all 0.4s linear;
     /* .mainmeal{
         width: 100%;
     } */
-     .result-container,.mealsArea,.ingres,.areas{
+     .result-container,.mealsArea,.ingres,.areas ,.mainMeals{
         padding: 0 15px;
      }
+     .contactArea form{
+        width: 80%;
+    }
+    .sidebar-show{
+        left: 286px;
+    }
+    .menu{
+        position: fixed;
+        width: 286px;
+        left: -286px;
+        transition: all 0.9s ease-in-out;
+        height: 100vh;
+        z-index: 10000;
+        background-color: #101010!important;
+    }
+    .menu-show{
+        left: 0;
+        transition: all 0.9s ease-in-out;
+    }
 }
