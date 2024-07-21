@@ -381,6 +381,7 @@ $.ajax({
         console.error('Error submitting the form');
     }
 });
+
 });
 
 
@@ -389,30 +390,32 @@ clear();
 toggleSideBar();
 $(".contactArea").css("display","flex");
 })
-function validatePhase(phaseId) {
-var phase = document.getElementById(phaseId);
-var inputs = phase.querySelectorAll('input[required]');
-var isValid = true;
+// function validatePhase(phase) {
 
-inputs.forEach(function(input) {
-    if (!input.value.trim()) {
-        isValid = false;
-        input.classList.add('is-invalid');
-        var errorElement = input.nextElementSibling;
-        if (errorElement && errorElement.classList.contains('error')) {
-            errorElement.style.display = 'block';
-        }
-    } else {
-        input.classList.remove('is-invalid');
-        var errorElement = input.nextElementSibling;
-        if (errorElement && errorElement.classList.contains('error')) {
-            errorElement.style.display = 'none';
-        }
-    }
-});
+//   var inputs = phase.find('input[required]');
+//   var isValid = true;
 
-return isValid;
-}
+//   $inputs.each(function() {
+//       var $input = $(this);
+//       if (!$input.val().trim()) {
+//           isValid = false;
+//           $input.addClass('is-invalid');
+//           var $errorElement = $input.next('.error');
+//           if ($errorElement.length) {
+//               $errorElement.show();
+//           }
+//       } else {
+//           $input.removeClass('is-invalid');
+//           var $errorElement = $input.next('.error');
+//           if ($errorElement.length) {
+//               $errorElement.hide();
+//           }
+//       }
+//   });
+
+//   return isValid;
+// }
+
 
 
 // function to dynamically toggle the sidebar
