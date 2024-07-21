@@ -23,7 +23,7 @@ YuMMy is a comprehensive restaurant web application that provides users with det
 ## Installation and Setup
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/yourusername/yummy-restaurant.git
-   cd yummy-restaurant
+   git clone https://github.com/nourhanHesham77/YuMMy.git
+   cd YuMMy
 
    
